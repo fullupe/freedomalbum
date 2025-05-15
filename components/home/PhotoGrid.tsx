@@ -26,3 +26,4 @@ export default function PhotoGrid({ photos }: PhotoGridProps) {
     </section>
   );
 }
+export const revalidate = 0 ;

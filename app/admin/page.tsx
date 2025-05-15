@@ -5,15 +5,6 @@ import { supabase } from '@/lib/supabase';
 import AdminDashboard from '@/components/admin/AdminDashboard';
 import { useEffect, useState } from 'react';
 
-
-async function getSession() {
-  // When connected to Supabase, replace with:
-  const { data: { session } } = await supabase.auth.getSession();
-  console.log(session)
-  return session;
-
-}
-
  export default function AdminPage() {
   //const session = await getSession();
   const router = useRouter();

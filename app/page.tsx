@@ -4,36 +4,42 @@ import { supabase } from "@/lib/supabase";
 import Banner from "@/components/home/Banner";
 import PhotoGrid from "@/components/home/PhotoGrid";
 import { Photo } from "@/types";
-import { useEffect } from "react";
-
-async function getPhotos() {
-  // When connected to Supabase, replace with:
-  const { data, error } = await supabase
-    .from('photos')
-    .select('*')
-    .order('created_at', { ascending: false });
-  
-  if (error) {
-    console.error('Error fetching photos:', error);
-    return [];
-  }
-  
-    return data as Photo[];
-  
-
-}
+import { useEffect, useState } from "react";
 
 
 
+export default  function Home() {
+  const [photos, setPhotos] = useState<Photo[]>([]);
+
+  useEffect(() => {
+    const fetchPhotos = async () => {
+      // When connected to Supabase, replace with:
+      const { data, error } = await supabase
+        .from('photos')
+        .select('*')
+        .order('created_at', { ascending: false });
+      
+      if (error) {
+        console.error('Error fetching photos:', error);
+        return;
+      }
+      
+      setPhotos(data);
+      
+    
+    //setIsLoading(false);
+ 
+    };
+    
+    fetchPhotos();
+  }, []);
 
 
-export default async function Home() {
-  
-  useEffect(()=>{
-    getPhotos()
-  },[])
+  // useEffect(()=>{
+  //   getPhotos()
+  // },[])
 
-  const photos = await getPhotos();
+  //const photos = await getPhotos();
 
   
   return (
@@ -64,3 +70,4 @@ export default async function Home() {
     </div>
   );
 }
+export const revalidate =0; 

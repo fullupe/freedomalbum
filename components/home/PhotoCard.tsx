@@ -43,3 +43,4 @@ export default function PhotoCard({ photo }: PhotoCardProps) {
     </Link>
   );
 }
+export const revalidate = 0 ;
