@@ -23,7 +23,7 @@ async function getSession() {
     const { data: { session } } = await supabase.auth.getSession();
     setClientSession(session);
   }
-  console.log('Client Session:', clientSession);
+  //console.log('Client Session:', clientSession);
   
   useEffect(() => {
     fetchClientSession();
@@ -34,16 +34,16 @@ async function getSession() {
     return (
       <>
       
-      {clientSession ? (
+      {clientSession && 
         
         <AdminDashboard /> 
         
         
-      ):
+     // ):
       //null
        //redirect('/admin/login')
 
-       router.push("/admin")
+       //router.push("/admin")
       
     }
     </>
