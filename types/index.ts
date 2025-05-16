@@ -21,3 +21,12 @@ export interface BannerSlide {
   image_url: string;
   title?: string;
 }
+export interface Video {
+  id: string;
+  title: string;
+  description: string;
+  video_url: string;
+  thumbnail_url: string;
+  featured: boolean;
+  created_at: string;
+}
