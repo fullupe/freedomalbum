@@ -7,30 +7,35 @@ import { BannerSlide } from "@/types";
 import { cn } from "@/lib/utils";
 
 const slides: BannerSlide[] = [
-  {
-    id: 1,
-    image_url: "https://images.pexels.com/photos/1456613/pexels-photo-1456613.jpeg",
-    title: "Our Special Day"
-  },
-  {
-    id: 2,
-    image_url: "https://images.pexels.com/photos/1573007/pexels-photo-1573007.jpeg",
-    title: "Forever & Always"
-  },
-  {
-    id: 3,
-    image_url: "https://images.pexels.com/photos/169198/pexels-photo-169198.jpeg",
-    title: "The Beginning of Our Journey"
-  },
+  // {
+  //   id: 1,
+  //   image_url: "https://images.pexels.com/photos/1456613/pexels-photo-1456613.jpeg",
+  //   title: "Our Special Day"
+  // },
+  // {
+  //   id: 2,
+  //   image_url: "https://images.pexels.com/photos/1573007/pexels-photo-1573007.jpeg",
+  //   title: "Forever & Always"
+  // },
   {
     id: 3,
-    image_url: "https://res.cloudinary.com/dtho1iv7d/image/upload/v1747335807/PHOTO-2025-05-15-16-44-02_uirdk0.jpg",
+    image_url: "https://res.cloudinary.com/dtho1iv7d/image/upload/v1747485270/PHOTO-2025-05-15-16-44-10_unpv6f.jpg",
     title: "The Beginning of Our Journey"
   },
   {
     id: 4,
-    image_url: "https://res.cloudinary.com/dtho1iv7d/image/upload/v1747312572/banner1_akan4b.jpg",
+    image_url: "https://res.cloudinary.com/dtho1iv7d/image/upload/v1747335807/PHOTO-2025-05-15-16-44-02_uirdk0.jpg",
     title: "The Beginning of Our Journey"
+  },
+  {
+    id: 5,
+    image_url: "https://res.cloudinary.com/dtho1iv7d/image/upload/v1747312572/banner1_akan4b.jpg",
+    title: "Forever & Always"
+  },
+  {
+    id: 6,
+    image_url: "https://res.cloudinary.com/dtho1iv7d/image/upload/v1747484618/PHOTO-2025-05-15-16-44-02_kmbcuz.jpg",
+    title: "Our Special Day"
   }
 ];
 
@@ -65,7 +70,7 @@ export default function Banner() {
             alt={slide.title || "Wedding photo"}
             fill
             priority={index === 0}
-            className="object-cover"
+            className="object-cover sm:object-center"
           />
           <div className="absolute inset-0 bg-black/30" />
           <div className="absolute inset-0 flex flex-col items-center justify-center px-4 text-center">

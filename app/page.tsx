@@ -23,7 +23,7 @@ const sampleVideos: Video[] = [
     id: "2",
     title: "First Dance",
     description: "Our magical first dance as husband and wife.",
-    video_url: "https://res.cloudinary.com/dtho1iv7d/video/upload/v1747395022/VIDEO-2025-05-14-11-04-52_rduhep.mp4",
+    video_url: "https://player.cloudinary.com/embed/?cloud_name=dtho1iv7d&public_id=VIDEO-2025-05-14-11-04-52_rduhep&profile=cld-default",
     thumbnail_url: "https://images.pexels.com/photos/1456613/pexels-photo-1456613.jpeg",
     featured: true,
     created_at: new Date().toISOString(),
@@ -32,7 +32,8 @@ const sampleVideos: Video[] = [
     id: "3",
     title: "Reception Party",
     description: "Fun moments from our wedding reception.",
-    video_url: "https://res.cloudinary.com/dtho1iv7d/video/upload/v1747395094/VIDEO-2025-05-10-11-29-46_pz4gxt.mp4",
+    //https://res.cloudinary.com/dtho1iv7d/video/upload/v1747395094/VIDEO-2025-05-10-11-29-46_pz4gxt.mp4
+    video_url: "https://player.cloudinary.com/embed/?cloud_name=dtho1iv7d&public_id=VIDEO-2025-05-10-11-29-46_pz4gxt&profile=cld-default",
     thumbnail_url: "https://images.pexels.com/photos/313707/pexels-photo-313707.jpeg",
     featured: false,
     created_at: new Date().toISOString(),

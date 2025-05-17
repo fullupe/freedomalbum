@@ -47,7 +47,7 @@ export default function VideoCard({ video }: VideoCardProps) {
       <div className="relative aspect-video overflow-hidden">
         <iframe
         allowFullScreen
-        width={100}
+        //width={100}
           // ref={videoRef}
           src={video.video_url}
           // poster={video.thumbnail_url}
