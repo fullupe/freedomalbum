@@ -1,18 +1,60 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
-import { Photo } from "@/types";
+import { Photo, Comment } from "@/types";
 import { getImageUrl } from "@/lib/supabase";
 import { cn } from "@/lib/utils";
+import { supabase } from "@/lib/supabase";
 
 interface PhotoCardProps {
   photo: Photo;
 }
 
-export default function PhotoCard({ photo }: PhotoCardProps) {
+
+
+export default   function PhotoCard({ photo }: PhotoCardProps) {
   const [isLoading, setIsLoading] = useState(true);
+
+  const [coments,setComments]=useState<any>(0)
+
+
+  async function getComments(photoId: string) {
+    // When connected to Supabase, replace with:
+    const { data, error } = await supabase
+      .from('comments')
+      .select('*')
+      .eq('photo_id', photoId)
+      .order('created_at', { ascending: false });
+    
+    if (error) {
+      console.error('Error fetching comments:', error);
+      return [];
+    }
+    
+    //console.log(data.length)
+   
+  
+    return data.length 
+    
+    
+  }
+
+
+
+
+  
+   useEffect(()=>{
+   //const NumberOfComments  =  ;
+
+   console.log(  getComments(photo.id))
+
+    setComments( getComments(photo.id))
+
+   },[])
+
+
   
   return (
     <Link href={`/photos/${photo.id}`}>
@@ -30,6 +72,11 @@ export default function PhotoCard({ photo }: PhotoCardProps) {
             sizes="(max-width: 640px) 100vw, (max-width: 1024px) 60vw, 43vw"
             onLoadingComplete={() => setIsLoading(false)}
           />
+           <div className="absolute top-3 left-3 bg-[#566521]/80 text-white py-1 px-3 rounded-full text-xs font-medium">
+
+              <p className="white font-cormorant text-lg font-semibold"> Comnents ({coments})</p>
+
+           </div>
         </div>
         <div className="p-4">
           <h3 className="font-cormorant text-xl font-medium text-card-foreground">

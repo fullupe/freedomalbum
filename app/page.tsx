@@ -8,7 +8,7 @@ import { useEffect, useState } from "react";
 import VideoSection from "@/components/home/VideoSection";
 
 
-// Sample video data
+
 const sampleVideos: Video[] = [
   {
     id: "1",
@@ -32,7 +32,7 @@ const sampleVideos: Video[] = [
     id: "3",
     title: "Reception Party",
     description: "Fun moments from our wedding reception.",
-    //https://res.cloudinary.com/dtho1iv7d/video/upload/v1747395094/VIDEO-2025-05-10-11-29-46_pz4gxt.mp4
+
     video_url: "https://player.cloudinary.com/embed/?cloud_name=dtho1iv7d&public_id=VIDEO-2025-05-10-11-29-46_pz4gxt&profile=cld-default",
     thumbnail_url: "https://images.pexels.com/photos/313707/pexels-photo-313707.jpeg",
     featured: false,
@@ -40,30 +40,13 @@ const sampleVideos: Video[] = [
   },
 ];
 
-async function getVideos() {
-  // When connected to Supabase, replace with:
-  // const { data, error } = await supabase
-  //   .from('videos')
-  //   .select('*')
-  //   .order('created_at', { ascending: false });
-  
-  // if (error) {
-  //   console.error('Error fetching videos:', error);
-  //   return [];
-  // }
-  
-  // return data as Video[];
-  
-  return sampleVideos;
-}
-
 
 
 export default  function Home() {
 
-  //const videoss =  getVideos();
 
-const [videos, setvideos]=useState<Video[]>(sampleVideos)
+
+const [videos]=useState<Video[]>(sampleVideos)
 
   const [photos, setPhotos] = useState<Photo[]>([]);
 
@@ -81,9 +64,7 @@ const [videos, setvideos]=useState<Video[]>(sampleVideos)
       }
       
       setPhotos(data);
-      
     
-    //setIsLoading(false);
  
     };
     
@@ -91,13 +72,7 @@ const [videos, setvideos]=useState<Video[]>(sampleVideos)
   }, []);
 
 
-  // useEffect(()=>{
-  //   getPhotos()
-  // },[])
 
-  //const photos = await getPhotos();
-
-  
   return (
     <div className="min-h-screen">
       <Banner />
