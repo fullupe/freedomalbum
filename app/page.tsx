@@ -12,7 +12,16 @@ import VideoSection from "@/components/home/VideoSection";
 const sampleVideos: Video[] = [
   {
     id: "1",
-    title: "Wedding Ceremony Highlights",
+    title: "Wedding Ceremony Highlights 1",
+    description: "Beautiful moments from our wedding ceremony.",
+    video_url: "https://player.cloudinary.com/embed/?cloud_name=dtho1iv7d&public_id=VIDEO-2025-05-29-11-09-21_ynkpbb&profile=cld-default",
+    thumbnail_url: "https://images.pexels.com/photos/1573007/pexels-photo-1573007.jpeg",
+    featured: true,
+    created_at: new Date().toISOString(),
+  },
+  {
+    id: "2",
+    title: "Wedding Ceremony Highlights 2",
     description: "Beautiful moments from our wedding ceremony.",
     video_url: "https://player.cloudinary.com/embed/?cloud_name=dtho1iv7d&public_id=VIDEO-2025-05-15-15-29-05_vcmdqd&profile=cld-default",
     thumbnail_url: "https://images.pexels.com/photos/1573007/pexels-photo-1573007.jpeg",
@@ -20,7 +29,7 @@ const sampleVideos: Video[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: "2",
+    id: "3",
     title: "First Dance",
     description: "Our magical first dance as husband and wife.",
     video_url: "https://player.cloudinary.com/embed/?cloud_name=dtho1iv7d&public_id=VIDEO-2025-05-14-11-04-52_rduhep&profile=cld-default",
@@ -29,7 +38,7 @@ const sampleVideos: Video[] = [
     created_at: new Date().toISOString(),
   },
   {
-    id: "3",
+    id: "4",
     title: "Reception Party",
     description: "Fun moments from our wedding reception.",
 
