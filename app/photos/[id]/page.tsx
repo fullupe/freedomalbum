@@ -100,3 +100,5 @@ export default async function PhotoPage({ params }: PhotoPageProps) {
     </div>
   );
 }
+
+export const revalidate = 0 ;
